@@ -1,10 +1,15 @@
 pipeline {
     agent any
-    environment{
-        DOCKERHUB_CREDS = credentials('dockerhub')
+    environment {
+        DOCKER_CREDS = credentials('dockerhub_creds')
     }
     stages {
-        stage('Clone Repo') {
+        stage('Clean Up') {
+            steps {
+                deleteDir()
+            }
+        }
+        stage('clone Repo') {
             steps {
                 checkout scm
                 sh 'ls *'
@@ -12,27 +17,24 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                //sh 'docker build -t raj80dockerid/jenkinstest ./pushdockerimage/' (this will use the tag latest)
-		sh 'docker build -t raj80dockerid/jenkinstest:$BUILD_NUMBER ./pushdockerimage/'
+                sh 'docker build -t venu1322/jenkinstest:$BUILD_NUMBER ./pushdockerimage/'
             }
         }
-        stage('Docker Login') {
+        stage('Docker login') {
             steps {
-                //sh 'docker login -u $DOCKERHUB_CREDS_USR -p $DOCKERHUB_CREDS_PSW' (this will leave the password visible)
-                sh 'echo $DOCKERHUB_CREDS_PSW | docker login -u $DOCKERHUB_CREDS_USR --password-stdin'                
-                }
+                //sh 'docker login -u $DOCKER_CREDS_USR -p $DOCKER_CREDS_PSW'
+                sh 'echo $DOCKER_CREDS_PSW | docker login -u $DOCKER_CREDS_USR --password-stdin'
             }
+        }
         stage('Docker Push') {
             steps {
-		//sh 'docker push raj80dockerid/jenkinstest' (this will use the tag latest)    
-                sh 'docker push raj80dockerid/jenkinstest:$BUILD_NUMBER'
-                }
+                sh 'docker push venu1322/jenkinstest:$BUILD_NUMBER'
             }
         }
-    post {
-		always {
-			sh 'docker logout'
-		}
-	 }
     }
-
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+}
