@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_CREDS = credentials('dockerhub_creds')
+        DOCKER_CREDS = credentials('docker_creds')
     }
     stages {
         stage('Clean Up') {
