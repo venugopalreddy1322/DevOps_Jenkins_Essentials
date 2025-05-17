@@ -10,8 +10,12 @@
   - Go to official Hasicorp website to [Install Terraform](https://developer.hashicorp.com/terraform/install)
 
 - **Docker**
-  - To install Docker on Amazon Linux 2 or Amazon Linux 2023 [Install Docker]()  
-- **Terraform Configuration**  
+  - To install Docker on Amazon Linux 2 or Amazon Linux 2023 [Install Docker](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-docker.html)  
+  - After installation add ec2-user and jenkins to docker group
+   ```sh
+   sudo usermod -aG docker jenkins ec2-user
+   ```
+- **Terraform Configuration on Jenkins**  
   - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
   - Uncheck **Install automatically**  
   - Set installation directory to `which terraform` output (e.g., `/usr/bin/terraform`)
