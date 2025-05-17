@@ -3,6 +3,11 @@
 
 ## Jenkins Setup & Configuration
 ## Install the necessary softwares
+- **Jenkins**
+- **Terraform Configuration**  
+  - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
+  - Uncheck **Install automatically**  
+  - Set installation directory to `which terraform` output (e.g., `/usr/bin/terraform`)
 
 ## Installed Plugins for the demos
 - **Docker**
