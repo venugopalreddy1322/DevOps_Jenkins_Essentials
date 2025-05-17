@@ -47,7 +47,7 @@
    sudo usermod -aG sudo jenkins
    ```
 
-## Setting Up AWS Credentials for Jenkins
+## Setting Up AWS Credentials for Jenkins (Vagrant VM)
 1. Create the `.aws` directory inside the Jenkins home directory:
    ```sh
    sudo mkdir -p /var/lib/jenkins/.aws
