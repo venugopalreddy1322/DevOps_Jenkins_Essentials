@@ -1,5 +1,51 @@
-.git
-git.sh
-.vscode
-.terraform
+# 🏗️ Terraform
+*.tfstate
+*.tfstate.*
+*.terraform/
+.terraform.lock.hcl
+plan.out
 
+# 🔧 Jenkins
+jenkins_home/
+jenkins.log
+*.jenkins
+
+# 🐍 Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.idea/
+.cache/
+.DS_Store
+
+# 🐳 Docker
+*.dockerignore
+docker-compose.override.yml
+docker-compose.override.*.yml
+# Dockerfile*
+.docker/
+**/docker-build-cache/
+
+# 💻 VS Code
+.vscode/
+*.code-workspace
+
+# 🏗️ Git
+.git/
+# .gitignore
+*.lock
+*.bak
+*.swp
+*.swo
+
+# 🛠️ Miscellaneous
+logs/
+*.log
+*.out
+node_modules/
+dist/
+build/
+coverage/
