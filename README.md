@@ -15,6 +15,7 @@
    ```sh
    sudo usermod -aG docker jenkins ec2-user
    ```
+   
 - **Terraform Configuration on Jenkins**  
   - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
   - Uncheck **Install automatically**  
