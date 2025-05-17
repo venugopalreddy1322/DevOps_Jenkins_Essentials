@@ -28,28 +28,36 @@ Before running this setup, ensure you have:
 
 ### **Required Softwares**
 Install the following on **EC2**:
+
 1. **Terraform** 🏗️:
    ```bash
    sudo yum install -y yum-utils
    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
    sudo yum install -y terraform
    terraform -v  # Verify installation
-Docker 🐳:
+   ```
 
-bash
+Docker 🐳:
+### Docker Installation
+To install Docker on Amazon Linux:
+
+```bash
 sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 docker --version  # Verify installation
+```
+
 Jenkins 🔧:
 
-bash
+```bash
 sudo yum install -y java-11-amazon-corretto
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install -y jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
+```
 Install Necessary Jenkins Plugins
 
 Terraform Plugin
@@ -63,9 +71,10 @@ Configure credentials for GitHub & Docker Hub within Jenkins
 📋 Terraform Configuration
 Create a terraform directory in your project:
 
-bash
+```bash
 mkdir terraform && cd terraform
 touch main.tf variables.tf outputs.tf
+```
 Terraform Script (main.tf)
 hcl
 resource "aws_instance" "Webserver" {
@@ -85,10 +94,11 @@ resource "aws_instance" "Webserver" {
   }
 }
 Initialize & Apply Terraform
-bash
+```bash
 terraform init
 terraform plan
 terraform apply -auto-approve
+```
 🏗️ Application Deployment: Python App
 This project includes:
 
@@ -141,7 +151,7 @@ pipeline {
 Once Jenkins is installed, access it via:
 
 http://<elastic-ip>:8080/
-Use sudo cat /var/lib/jenkins/secrets/initialAdminPassword to retrieve the admin password.
+Use ``` sudo cat /var/lib/jenkins/secrets/initialAdminPassword ``` to retrieve the admin password.
 
 🚀 Start & Stop EC2 Instance Using Terraform
 Terraform can manage instance states:
