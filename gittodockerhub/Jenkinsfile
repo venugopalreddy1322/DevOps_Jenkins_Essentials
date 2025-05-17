@@ -1,11 +1,14 @@
 pipeline {
-    agent any {
+    agent any 
     environment {
-        GIT_CREDS = credentials('github')
         DOCKER_CREDS = credentials('dockerhub')
     }
-    }
     stages {
+        stage('Cleanup Stage') {
+            steps {
+                deleteDir()
+            }
+        }
         stage('Copy Repo') {
             steps {
                 checkout scm
@@ -19,7 +22,7 @@ pipeline {
         }
         stage('Dockerhub Login') {
             steps {
-                sh 'echo $DOCKER_CREDS | docker login --username=$DOCKER_CREDS_USR --pass-stdin'
+                sh 'echo $DOCKER_CREDS_PSW | docker login --username=$DOCKER_CREDS_USR --password-stdin'
             }
         }
         stage('Push Docker image to Docherhub') {
@@ -29,8 +32,8 @@ pipeline {
         }
     }
     post{
-        success {
-            sh 'echo Build and Push SUCCEEDED'
+        always {
+            sh 'docker logout'
         }
     }
 }
