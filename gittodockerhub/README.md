@@ -76,7 +76,8 @@ mkdir terraform && cd terraform
 touch main.tf variables.tf outputs.tf
 ```
 Terraform Script (main.tf)
-hcl
+```hcl
+
 resource "aws_instance" "Webserver" {
   ami           = data.aws_ami.amz2ami.id
   instance_type = var.instance_type
@@ -98,7 +99,7 @@ Initialize & Apply Terraform
 terraform init
 terraform plan
 terraform apply -auto-approve
-```
+
 🏗️ Application Deployment: Python App
 This project includes:
 
@@ -111,15 +112,17 @@ Dockerfile (Container configuration)
 Jenkinsfile (CI pipeline)
 
 Dockerfile
-dockerfile
+```dockerfile
+
 FROM python:3.9
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY app.py .
 CMD ["python", "app.py"]
+
 Jenkinsfile
-groovy
+```groovy
 pipeline {
     agent any
     stages {
@@ -157,13 +160,14 @@ Use ``` sudo cat /var/lib/jenkins/secrets/initialAdminPassword ``` to retrieve t
 Terraform can manage instance states:
 
 Stop EC2 Instance
-hcl
+```hcl
 resource "aws_ec2_instance_state" "stop_instance" {
   instance_id = aws_instance.Webserver.id
   state       = "stopped"
 }
+
 Start EC2 Instance
-hcl
+```hcl
 resource "aws_ec2_instance_state" "start_instance" {
   instance_id = aws_instance.Webserver.id
   state       = "running"
