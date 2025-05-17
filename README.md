@@ -4,6 +4,7 @@
 ## Jenkins Setup & Configuration
 ## Install the necessary softwares
 - **Jenkins**
+  - Go to official Jenkins website to Install Jenkins  
 - **Terraform Configuration**  
   - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
   - Uncheck **Install automatically**  
