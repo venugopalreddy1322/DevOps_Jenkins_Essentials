@@ -41,6 +41,13 @@
    - check wheteher jenkins user added to docker group
       To add ``` sudo chmod -aG docker jenkins ```
       to check ``` groups jenkins ```
+   - Change Permissions for Docker Socket
+      Try explicitly granting access:
+   ```bash
+      sudo chmod 666 /var/run/docker.sock
+   ```
+   This will allows non-root users (like Jenkins) to connect to Docker.
+   
 ## Connecting a Vagrant Machine to AWS
 1. Configure AWS credentials on the Vagrant machine:
    ```sh
