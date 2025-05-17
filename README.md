@@ -10,7 +10,7 @@
   - Go to official Hasicorp website to [Install Terraform](https://developer.hashicorp.com/terraform/install)
 
 - **Docker**
-  - To Install Docker on Amazon Ec2 with Go to official Jenkins website to [Install Jenkins](https://www.jenkins.io/doc/book/installing/)  
+  - To install Docker on Amazon Linux 2 or Amazon Linux 2023 [Install Docker]()  
 - **Terraform Configuration**  
   - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
   - Uncheck **Install automatically**  
