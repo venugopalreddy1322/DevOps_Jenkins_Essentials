@@ -35,7 +35,7 @@ Install the following on **EC2**:
    sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
    sudo yum install -y terraform
    terraform -v  # Verify installation
-   ```
+   
 
 Docker 🐳:
 ### Docker Installation
@@ -46,7 +46,7 @@ sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 docker --version  # Verify installation
-```
+
 
 Jenkins 🔧:
 
@@ -57,7 +57,7 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install -y jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-```
+
 Install Necessary Jenkins Plugins
 
 Terraform Plugin
@@ -74,7 +74,7 @@ Create a terraform directory in your project:
 ```bash
 mkdir terraform && cd terraform
 touch main.tf variables.tf outputs.tf
-```
+
 Terraform Script (main.tf)
 ```hcl
 
