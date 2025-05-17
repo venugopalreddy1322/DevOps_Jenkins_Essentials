@@ -36,6 +36,11 @@
   - Username: _same as DockerHub login_  
   - Password: **DockerHub password**
 
+## NOTE: While running the Jenkins job, if you encounter an error saying permissin denied to jenkins user to execute docker commands:
+- There might be several reasons:
+   - check wheteher jenkins user added to docker group
+      To add ``` sudo chmod -aG docker jenkins ```
+      to check ``` groups jenkins ```
 ## Connecting a Vagrant Machine to AWS
 1. Configure AWS credentials on the Vagrant machine:
    ```sh
