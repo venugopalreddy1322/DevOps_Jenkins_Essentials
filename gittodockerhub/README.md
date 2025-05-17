@@ -1,0 +1,1 @@
+## A realtime demo to checkout a Repository from Github, containerize python application using Dockerfile and push the Docker image to Dockerhub  
