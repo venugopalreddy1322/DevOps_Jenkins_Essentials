@@ -40,6 +40,7 @@ docker-compose.override.*.yml
 *.bak
 *.swp
 *.swo
+git.sh
 
 # 🛠️ Miscellaneous
 logs/
