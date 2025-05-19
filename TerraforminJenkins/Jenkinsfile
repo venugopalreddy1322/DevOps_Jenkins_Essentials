@@ -10,6 +10,18 @@ pipeline {
         stage('Terraform stage') {
             steps{
                 echo 'Executing Terraform steps'
+                sh """
+                cd TerraforminJenkins
+                terraform init
+                terraform plan
+                terraform apply --auto-approve
+                """
+                sh pwd
+            }
+        }
+        stage('Time to Destroy') {
+            steps{
+                Input message: 'Destroy Resources'
             }
         }
     }    
