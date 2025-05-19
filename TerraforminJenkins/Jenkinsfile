@@ -24,5 +24,10 @@ pipeline {
                 Input message: 'Destroy Resources'
             }
         }
+        stage('Search and Destroy') {
+            steps{
+                sh 'cd TerraforminJenkins'
+            }
+        }
     }    
 }
