@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Time to Destroy') {
             steps{
-                Input message: 'Destroy Resources'
+                input message: 'Destroy Resources'
             }
         }
         stage('Search and Destroy') {
