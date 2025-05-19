@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('Copy Repo') {
+            steps{
+                checkout scm
+                sh 'ls *'
+            }
+        }
+        stage('Terraform stage') {
+            steps{
+                echo 'Executing Terraform steps'
+            }
+        }
+    }    
+}
