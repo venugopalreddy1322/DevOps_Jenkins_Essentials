@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Search and Destroy') {
             steps{
-                sh 'cd TerraforminJenkins'
+                sh 'cd TerraforminJenkins; terraform destroy --auto-approve'
             }
         }
     }    
