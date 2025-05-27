@@ -45,5 +45,8 @@ curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_L
 sudo mv eksctl /usr/local/bin/
 eksctl version  # Verify installation
 
-
 ```
+### Next Steps
+#### Configure AWS CLI using aws configure.
+
+Create an EKS cluster using eksctl create cluster --name my-cluster --region us-east-1.
