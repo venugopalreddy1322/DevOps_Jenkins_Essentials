@@ -28,7 +28,15 @@ sudo ./aws/install
 aws --version  # Verify installation
 
 ```
+OR 
+Run the following snap install command for the AWS CLI.
+```bash
 
+$ snap install aws-cli --classic
+
+$ aws --version
+
+```
 #### Install kubectl
 
 ```bash
