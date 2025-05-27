@@ -55,6 +55,129 @@ eksctl version  # Verify installation
 
 ```
 ### Next Steps
-#### Configure AWS CLI using aws configure.
+#### Configure AWS CLI using
 
-Create an EKS cluster using eksctl create cluster --name my-cluster --region us-east-1.
+$ aws configure
+
+
+# 📘 eksctl Command Reference
+
+This document provides a list of the most commonly used `eksctl` commands for managing Amazon EKS (Elastic Kubernetes Service) clusters.
+
+---
+
+## 🛠️ Cluster Management
+
+### ✅ Create a Cluster
+```bash
+eksctl create cluster --name <cluster-name> --region <region> --nodes <count>
+```
+Creates an EKS cluster with the specified name, region, and number of worker nodes.
+
+### ❌ Delete a Cluster
+```bash
+eksctl delete cluster --name <cluster-name> --region <region>
+```
+Deletes the specified EKS cluster and all associated resources.
+
+---
+
+## 👤 Node Group Management
+
+### ➕ Create a Node Group
+```bash
+eksctl create nodegroup --cluster <cluster-name> --name <nodegroup-name> --region <region> --nodes <count>
+```
+Adds a managed node group to an existing cluster.
+
+### ➖ Delete a Node Group
+```bash
+eksctl delete nodegroup --cluster <cluster-name> --name <nodegroup-name> --region <region>
+```
+Deletes a specific node group from a cluster.
+
+---
+
+## 🔐 IAM & Access
+
+### 🔗 Create IAM Identity Mapping
+```bash
+eksctl create iamidentitymapping --cluster <cluster-name> --arn <IAM-ARN> --username <username> --group <group>
+```
+Grants an IAM user or role access to the EKS cluster by mapping to a Kubernetes user/group.
+
+---
+
+## 📦 Add-ons & Resources
+
+### 📋 List Add-ons
+```bash
+eksctl get addons --cluster <cluster-name> --region <region>
+```
+Lists available or installed EKS add-ons (like VPC CNI, CoreDNS, kube-proxy).
+
+### 🧩 Install an Add-on
+```bash
+eksctl create addon --name <addon-name> --cluster <cluster-name> --region <region>
+```
+Installs an EKS managed add-on.
+
+### 🗑️ Delete an Add-on
+```bash
+eksctl delete addon --name <addon-name> --cluster <cluster-name> --region <region>
+```
+Removes an EKS managed add-on from the cluster.
+
+---
+
+## 🧪 Cluster Info & Troubleshooting
+
+### 🔍 Get Cluster Info
+```bash
+eksctl get cluster --region <region>
+```
+Displays basic information about existing clusters in a region.
+
+### 📄 Get Nodegroups
+```bash
+eksctl get nodegroup --cluster <cluster-name> --region <region>
+```
+Lists all node groups in the specified cluster.
+
+---
+
+## ⚙️ Advanced Usage
+
+### 📝 Generate kubeconfig
+```bash
+eksctl utils write-kubeconfig --cluster <cluster-name> --region <region>
+```
+Writes or updates your kubeconfig to use the specified EKS cluster.
+
+### 📁 Create Cluster from Config File
+```bash
+eksctl create cluster -f cluster-config.yaml
+```
+Creates a cluster based on a declarative YAML configuration file.
+
+### 🧹 Delete Cluster from Config File
+```bash
+eksctl delete cluster -f cluster-config.yaml
+```
+Deletes a cluster defined in a YAML configuration file.
+
+---
+
+## 🧰 Helpful Flags
+
+- `--verbose 4` — Enables verbose logging for debugging.  
+- `--dry-run` — Simulates command without executing any changes.
+
+---
+
+## 📚 Resources
+
+- [eksctl Official Documentation](https://eksctl.io/)
+- [Amazon EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html)
+
+---
