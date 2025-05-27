@@ -23,6 +23,9 @@
 
 ## Installed Plugins for the demos
 - **Docker**
+- **Docker Pipeline Plugin**
+ 🔹 Enables docker.build(...) and docker.withRegistry(...) functionality.
+ 
 - **Terraform Configuration**  
   - Navigate to **Manage Jenkins** → **Tools** → **Terraform**  
   - Uncheck **Install automatically**  
