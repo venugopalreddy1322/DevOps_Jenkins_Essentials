@@ -39,3 +39,11 @@ kubectl version --client  # Verify installation
 ```
 
 #### Install eksctl
+
+```bash
+curl -sL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar xz
+sudo mv eksctl /usr/local/bin/
+eksctl version  # Verify installation
+
+
+```
