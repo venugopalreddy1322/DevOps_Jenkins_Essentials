@@ -57,7 +57,9 @@ eksctl version  # Verify installation
 ### Next Steps
 #### Configure AWS CLI using
 
+```bash
 $ aws configure
+```
 
 
 # 📘 eksctl Command Reference
