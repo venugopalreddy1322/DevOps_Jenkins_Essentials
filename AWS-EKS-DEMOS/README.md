@@ -138,7 +138,7 @@ eksctl get cluster --region <region>
 ```
 Displays basic information about existing clusters in a region.
 
-### 📄 Get Nodegroups
+### 📄 To Get Nodegroups
 ```bash
 eksctl get nodegroup --cluster <cluster-name> --region <region>
 ```
