@@ -130,7 +130,7 @@ Removes an EKS managed add-on from the cluster.
 
 ---
 
-## 🧪 Cluster Info & Troubleshooting
+## 🧪 For Cluster Info & Troubleshooting
 
 ### 🔍 Get Cluster Info
 ```bash
