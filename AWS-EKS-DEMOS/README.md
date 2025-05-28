@@ -60,7 +60,7 @@ eksctl version  # Verify installation
 ```bash
 $ aws configure
 ```
-
+And
 
 # 📘 eksctl Command Reference
 
