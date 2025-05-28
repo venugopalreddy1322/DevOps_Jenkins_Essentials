@@ -160,7 +160,7 @@ eksctl create cluster -f cluster-config.yaml
 ```
 Creates a cluster based on a declarative YAML configuration file.
 
-### 🧹 Delete Cluster from Config File
+### 🧹 To Delete Cluster from Config File
 ```bash
 eksctl delete cluster -f cluster-config.yaml
 ```
