@@ -21,7 +21,7 @@
   - Uncheck **Install automatically**  
   - Set installation directory to `which terraform` output (e.g., `/usr/bin/terraform`)
 
-## Installed Plugins for the demos
+## Installed Jenkins Plugins for the demos
 - **Docker**
 - **Docker Pipeline Plugin**
  🔹 Enables docker.build(...) and docker.withRegistry(...) functionality.
